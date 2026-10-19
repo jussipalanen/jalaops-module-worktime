@@ -1,7 +1,9 @@
 """Work time module for JalaOps: hours worked and labour cost.
 
 Input:  {"start": "07:30", "end": "16:00", "break_minutes": 30, "hourly_rate": 45}
-Output: {"duration": "8 h 0 min", "hours": 8.0, "cost": 360.0}
+Output: {"duration": "8 h 0 min", "hours": 8.0, "overtime": 0.0, "cost": 360.0}
+
+Hours past 8 are overtime.
 
 A shift that ends before it starts goes past midnight.
 """
@@ -41,7 +43,11 @@ worked = (end - start) % (24 * 60) - pause
 if worked <= 0:
     fail("Tauot ovat pidemmät kuin työaika.")
 
-output = {"duration": f"{int(worked // 60)} h {int(worked % 60)} min", "hours": round(worked / 60, 2)}
+output = {
+    "duration": f"{int(worked // 60)} h {int(worked % 60)} min",
+    "hours": round(worked / 60, 2),
+    "overtime": round(max(0, worked - 8 * 60) / 60, 2),
+}
 
 if "hourly_rate" in data:
     output["cost"] = round(worked / 60 * number(data["hourly_rate"], "Tuntihinta"), 2)

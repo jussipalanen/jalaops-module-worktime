@@ -1,7 +1,7 @@
 {
     "name": "Työaikalaskuri",
     "description": "Laskee tehdyt tunnit ja työn hinnan alkamis- ja päättymisajasta.",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "timeout": 5,
     "enabled": true,
     "form": [
@@ -13,6 +13,7 @@
     "results": [
         { "name": "duration", "label": "Työaika" },
         { "name": "hours", "label": "Tunnit", "decimals": 2 },
+        { "name": "overtime", "label": "Ylityö (h)", "decimals": 2 },
         { "name": "cost", "label": "Työn hinta (€)", "decimals": 2 }
     ]
 }
