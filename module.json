@@ -1,0 +1,18 @@
+{
+    "name": "Työaikalaskuri",
+    "description": "Laskee tehdyt tunnit ja työn hinnan alkamis- ja päättymisajasta.",
+    "version": "1.0.0",
+    "timeout": 5,
+    "enabled": true,
+    "form": [
+        { "name": "start", "label": "Alkoi (hh:mm)", "type": "text", "required": true, "default": "07:30" },
+        { "name": "end", "label": "Päättyi (hh:mm)", "type": "text", "required": true, "default": "16:00" },
+        { "name": "break_minutes", "label": "Tauot (min)", "type": "number", "default": 30 },
+        { "name": "hourly_rate", "label": "Tuntihinta (€)", "type": "number", "help": "Jätä tyhjäksi, jos hintaa ei lasketa." }
+    ],
+    "results": [
+        { "name": "duration", "label": "Työaika" },
+        { "name": "hours", "label": "Tunnit", "decimals": 2 },
+        { "name": "cost", "label": "Työn hinta (€)", "decimals": 2 }
+    ]
+}

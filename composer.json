@@ -1,0 +1,6 @@
+{
+    "name": "jalaops/worktime",
+    "description": "JalaOps module: hours worked and labour cost from start and end times.",
+    "type": "jalaops-module",
+    "license": "MIT"
+}
