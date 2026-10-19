@@ -5,7 +5,7 @@ A [JalaOps](https://github.com/jussipalanen/jalaops) Python module as a Composer
 Install it in the JalaOps backend:
 
 ```bash
-./dev composer config repositories.worktime vcs <this repository's URL>
+./dev composer config repositories.worktime vcs https://github.com/jussipalanen/jalaops-module-worktime.git
 ./dev composer require jalaops/worktime:^1.0
 ```
 
